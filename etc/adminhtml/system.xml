@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="noon" translate="label" sortOrder="1000">
+            <label>Noon</label>
+        </tab>
+        <section id="noon_custom_cron_job" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Custom Cron Job</label>
+            <tab>noon</tab>
+            <resource>Noon_CustomCronJob::main</resource>
+            <group id="configurable_cron" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>Cron</label>
+                <field id="crontab" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Crontab</label>
+                    <validate>required-entry</validate>
+                    <backend_model>Noon\CustomCronJob\Model\Config\CronConfig</backend_model>
+                </field>
+            </group> 
+        </section>
+    </system>
+</config>
